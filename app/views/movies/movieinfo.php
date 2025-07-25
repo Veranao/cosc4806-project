@@ -15,8 +15,7 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h1>Movies</h1>
-                <p class="lead"> <?= date("F jS, Y"); ?></p>
+                <p class="lead"> Today's Date: <?= date("F jS, Y"); ?></p>
             </div>
     </div>
         <?php if ($data['movie']['Error']): ?>
@@ -24,40 +23,47 @@
                 No movie with that name was found.
             </div>
         <?php else : ?>
+            <?php $movie = $data['movie'];?>
             <div class="row">
                 <div class="col-lg-12">
                     <h5>Movie Info</h5>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                            <th>Title</th>
-                            <th>Year</th>
-                            <th>Genre</th>
-                            <th>Director</th>
-                            <th>Actors</th> 
-                            <th>Plot</th>
-                            <th>Poster</th> 
-                            <th>IMDB Rating</th>
-                            <th>IMDB Votes</th>
-                            </tr>
-                        </thead> 
-                        
-                        <tbody> 
-                            <?php
-                                $movie = $data['movie'];
-                                echo "<tr>";                
-                                echo "<td>" . $movie['Title'] . "</td>";
-                                echo "<td>" . $movie['Year'] . "</td>";
-                                echo "<td>" . $movie['Genre'] . "</td>";                             
-                                echo "<td>" . $movie['Director'] . "</td>";
-                                echo "<td>" . $movie['Actors'] . "</td>";
-                                echo "<td>" . $movie['Plot'] . "</td>";
-                                echo "<td>" . $movie['Poster'] . "</td>";
-                                echo "<td>" . $movie['imdbRating'] . "</td>";
-                                echo "<td>" . $movie['imdbVotes'] . "</td>";
-                                echo "</tr>";?>                       
-                        </tbody>                    
-                    </table>                
+                    <div>
+                        <h1 class="display-4"> <?php echo $movie['Title']?> </h1>
+                        <h4> <?php echo $movie['Plot']?> </h4>                
+                    </div>
+
+                    <div class="row my-3">
+                        <div class="col-lg-3">
+                            <img src="<?php echo $movie['Poster']?>" alt="picture of movie"  class="img-thumbnail my-3"> 
+                        </div>
+
+                        <div class="col-lg-9">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                    <th>Year</th>
+                                    <th>Genre(s)</th>
+                                    <th>Director</th>
+                                    <th>Leading Actors</th> 
+                                    <th>IMDB Rating</th>
+                                    <th>Number of Votes on IMDB</th>
+                                    </tr>
+                                </thead> 
+                                
+                                <tbody>
+                                    <?php
+                                        echo "<tr>";                
+                                        echo "<td>" . $movie['Year'] . "</td>";
+                                        echo "<td>" . $movie['Genre'] . "</td>";                             
+                                        echo "<td>" . $movie['Director'] . "</td>";
+                                        echo "<td>" . $movie['Actors'] . "</td>";
+                                        echo "<td>" . $movie['imdbRating'] . "</td>";
+                                        echo "<td>" . $movie['imdbVotes'] . "</td>";
+                                        echo "</tr>";?>                       
+                                </tbody>                    
+                            </table> 
+                        </div>
+                    </div>
                 </div>            
             </div>         
         <?php endif; ?> 
