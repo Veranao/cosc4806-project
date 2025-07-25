@@ -19,7 +19,7 @@
                 <p class="lead"> <?= date("F jS, Y"); ?></p>
             </div>
     </div>
-        <?php if (count($data['movie'])) == 0): ?>
+        <?php if (count($data['movie']) == 0): ?>
             <div class="alert alert-primary" role="alert">
                 No movie with that name was found.
             </div>
@@ -39,8 +39,28 @@
                             <th>Poster</th> 
                             <th>IMDB Rating</th>
                             <th>IMDB Votes</th>
-                            </tr>                        </thead>                        <tbody>                            <?php                                foreach ($data['movie'] as $movie)                                {                                    echo "<tr>";                                    echo "<td>" . $movie['Title'] . "</td>";                                    echo "<td>" . $movie['Year'] . "</td>";                                    echo "<td>" . $movie['Genre                                        </td>";                                    echo "<td>" . $movie['Director'] . "</td>";                                    echo "<td>" . $movie['Actors'] . "</td>";                                    echo "<td>" . $movie['Plot'] . "</                                    echo "<td>" . $movie['Poster'] . "</td>";                                    echo "<td>" . $movie['imdbRating'] . "</td>";                                    echo "<td>" . $movie['imdbVotes'] .                                    echo "</tr>";                                }                            ?>                        </tbody>                    </table>                </div>            </div>        <?php endif; ?>                                        </div>   
-        <?php endif; ?>
+                            </tr>
+                        </thead> 
+                        
+                        <tbody> 
+                            <?php
+                                $movie = $data['movie'];
+                                echo "<tr>";                
+                                echo "<td>" . $movie['Title'] . "</td>";
+                                echo "<td>" . $movie['Year'] . "</td>";
+                                echo "<td>" . $movie['Genre'] . "</td>";                             
+                                echo "<td>" . $movie['Director'] . "</td>";
+                                echo "<td>" . $movie['Actors'] . "</td>";
+                                echo "<td>" . $movie['Plot'] . "</td>";
+                                echo "<td>" . $movie['Poster'] . "</td>";
+                                echo "<td>" . $movie['imdbRating'] . "</td>";
+                                echo "<td>" . $movie['imdbVotes'] . "</td>";
+                                echo "</tr>";?>                       
+                        </tbody>                    
+                    </table>                
+                </div>            
+            </div>         
+        <?php endif; ?> 
     </div>
 
    

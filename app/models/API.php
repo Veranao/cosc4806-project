@@ -11,7 +11,7 @@ class API {
         $response = file_get_contents($query_url);
         $response = json_decode($response, true);
         $movie = (array) $response;
-        return $response;
+        return $movie;
     }
 
 }

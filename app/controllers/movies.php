@@ -12,7 +12,7 @@ class Movies extends Controller {
        $title = $_POST['title'];
        $api = $this->model('API');
        $movie = $api->search_movie($title);
-       $this->view('movies/search', ['movie' => $movie]);
+       $this->view('movies/movieinfo', ['movie' => $movie]);
        echo '<pre>';
        print_r($movie);
        echo '</pre>';
