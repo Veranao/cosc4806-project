@@ -33,7 +33,7 @@
                     <h5>Movie Info</h5>
                     <div>
                         <h1 class="display-4"> <?php echo $movie['Title']?> </h1>
-                        <h4> <?php echo $movie['Plot']?> </h4>                
+                        <h4> Synopsis: <?php echo $movie['Plot']?> </h4>                
                     </div>
 
                     <div class="row my-3">

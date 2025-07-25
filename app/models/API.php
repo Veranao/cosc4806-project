@@ -14,5 +14,26 @@ class API {
         return $movie;
     }
 
+    public function get_review($title) {
+        $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" .     $_ENV['google_key'];
+
+        $data = array(
+            "contents" => array(
+                array(
+                    "role" => "user",
+                    "parts" => array(
+                        array(
+                            "text" => "Write a review of the movie " . $title . "."
+                        )
+                    )
+                )
+            )
+        )
+
+        $json_data = json_encode($data);
+        
+        
+    }
+
 }
 ?>
