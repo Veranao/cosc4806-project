@@ -1,0 +1,23 @@
+<?php
+
+
+class Movies extends Controller {
+
+    public function index() {		
+      $this->view('movies/index');
+    }
+
+   public function search() {
+     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+       $title = $_POST['title'];
+       $api = $this->model('API');
+       $movie = $api->search_movie($title);
+       $this->view('movies/search', ['movie' => $movie]);
+       echo '<pre>';
+       print_r($movie);
+       echo '</pre>';
+       die;
+     }
+   }
+
+}

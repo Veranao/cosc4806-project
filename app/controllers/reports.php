@@ -5,7 +5,7 @@ class Reports extends Controller {
     public function index() {		
       $reminder = $this->model('Reminder');
       $user = $this->model('User');
-      
+
       $queries = array();
       parse_str($_SERVER['QUERY_STRING'], $queries);
 
@@ -38,7 +38,7 @@ class Reports extends Controller {
           $reminder->delete($reminder_id);
 
           $_SESSION['flash'] = "Reminder deleted successfully.";
-        
+
           header("Location: /reminders");
           exit;
       }
@@ -59,13 +59,13 @@ class Reports extends Controller {
   }
 
   public function edit() {
-    
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $reminder_id = $_POST['reminder_id'];
 
         $reminderModel = $this->model('Reminder');
         $reminder = $reminderModel->get($reminder_id);
-      
+
         $this->view('updatereminder/index', ['reminder' => $reminder ]);
         die;
     }

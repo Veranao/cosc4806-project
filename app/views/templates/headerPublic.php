@@ -38,11 +38,16 @@ if (isset($_SESSION['auth']) == 1) {
                               <li class="nav-item">
                                   <a class="nav-link" href="/info">Info</a>
                               </li>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="/create">Sign Up</a>
-                              </li>
                           </ul>
                       </div>
+                      <ul class="navbar-nav ms-auto">
+                          <li class="nav-item">
+                              <a class="nav-link text-dark" href="/login" method="get">Login</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link text-dark" href="/create" method="get">Sign Up</a>
+                          </li>
+                      </ul>
                   </div>
               </nav>
           </header>

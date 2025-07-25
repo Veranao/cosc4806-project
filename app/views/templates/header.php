@@ -39,13 +39,8 @@ if (!isset($_SESSION['auth'])) {
                                   <a class="nav-link active" aria-current="page" href="/home">Home</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="/reminders">My Reminders</a>
+                                  <a class="nav-link" href="/movies">Movies</a>
                               </li>
-                              <?php if ($user->isAdmin()) : ?>
-                              <li class="nav-item">
-                                  <a class="nav-link" href="/reports">Reports</a>
-                              </li>
-                              <?php endif; ?>
                           </ul>
                       </div>
                     <div class="ms-auto">

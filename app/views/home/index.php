@@ -3,7 +3,7 @@
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-12 pt-5 pb-3">
-                <h1>Home</h1>
+                <h1>The Movie Critic</h1>
                 <p class="lead"> <?= date("F jS, Y"); ?></p>
             </div>
         </div>
@@ -11,18 +11,13 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <p>Hello! Welcome to the home page for COSC 4806 Assignment 5.</p>
-            <p>Here, you will be able to create and view your reminders</p>
+            <p>View movies, read reviews, and leave your own review!</p>
         </div>
     </div>
-
     <div class="row">
-        <div class="col-lg-12 mt-5">
-            <hr/>
-            <p>Get started by viewing your current reminders.</p>
-            <a href="/reminders" method="get">
-                <button type="submit" class="btn btn-primary">View reminders</button>
-            </a>
+        <div class="col-lg-12">
+            <h5>Recently reviewed</h5>
+            <!-- TODO: Add recently reviewed movies here -->
         </div>
     </div>
 </div>
