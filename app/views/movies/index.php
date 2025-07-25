@@ -1,4 +1,8 @@
-<?php require_once 'app/views/templates/header.php' ?>
+<?php if(!isset($_SESSION['auth'])) {
+    require 'app/views/templates/headerPublic.php';
+} else {
+    require 'app/views/templates/header.php';
+} ?>
 
 <div class="container">
     <div class="page-header" id="banner">
