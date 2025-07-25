@@ -36,7 +36,7 @@ if (isset($_SESSION['auth']) == 1) {
                                   <a class="nav-link active" aria-current="page" href="/home">Home</a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="/info">Info</a>
+                                  <a class="nav-link" href="/movies">Movie</a>
                               </li>
                           </ul>
                       </div>

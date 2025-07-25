@@ -38,7 +38,14 @@
 
                     <div class="row my-3">
                         <div class="col-lg-3">
-                            <img src="<?php echo $movie['Poster']?>" alt="picture of movie"  class="img-thumbnail my-3"> 
+                            <?php if ($movie['Poster'] == "N/A"): ?>
+                                <div class="alert alert-primary" role="alert">
+                                    No image available for this movie.
+                                </div>
+                            <?php else: ?>
+                                <img src="<?php echo $movie['Poster']?>" alt="picture of movie"  class="img-thumbnail my-3"> 
+                            <?php endif; ?>
+                                
                         </div>
 
                         <div class="col-lg-9">
