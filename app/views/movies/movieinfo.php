@@ -19,7 +19,7 @@
                 <p class="lead"> <?= date("F jS, Y"); ?></p>
             </div>
     </div>
-        <?php if (count($data['movie']) == 0): ?>
+        <?php if ($data['movie']['Error']): ?>
             <div class="alert alert-primary" role="alert">
                 No movie with that name was found.
             </div>
