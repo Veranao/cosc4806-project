@@ -26,13 +26,13 @@ class Movies extends Controller {
        $movie = $_POST['movieID'];
        $review = $this->model('Review');
        $review->leave_review($rating, $movie);
-       $title = $_POST['title'];
+       //$title = $_POST['title'];
 
-       $api = $this->model('API');
-       $movie = $api->search_movie($title);
-       $review = $api->get_review($title);
+       //$api = $this->model('API');
+       //$movie = $api->search_movie($title);
+       //$review = $api->get_review($title);
 
-       $this->view('movies/movieinfo', ['movie' => $movie, 'review' => $review ]);
+       $this->view('movies/index');
 
        
        die;

@@ -129,9 +129,17 @@
             </div>
         </form>
 
+       <div id="reviewMessage" class="alert alert-success" style="display: none;">Thank you for your review!</div>
+
         <script>
             function submitForm() {
-                document.getElementById('ratingForm').submit();
+                setTimeout(() => {
+                    document.getElementById('reviewMessage').style.display = "block";
+                    setTimeout(() => {
+                         document.getElementById('ratingForm').submit();
+                    }, 250);
+                }, 500);
+               
             }
         </script>
     <?php endif; ?> 
