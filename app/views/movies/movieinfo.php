@@ -73,6 +73,10 @@
                                         echo "</tr>";?>                       
                                 </tbody>                    
                             </table> 
+
+                            <div>
+                                <?php if ($data['review'] == null): ?>
+                            </div>
                         </div>
                     </div>
                 </div>            

@@ -17,16 +17,13 @@ class API {
     public function get_review($title) {
         $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" . $_ENV['GEMINI'];
 
-        echo $url;
-        echo "<br>";
-
         $data = array(
             "contents" => array(
                 array(
                     "role" => "user",
                     "parts" => array(
                         array(
-                            "text" => "Write a review of the movie " . $title . "."
+                            "text" => "Write a review of the movie " . $title . " based on the aggregate reviews for this movie, written as an IMDB, Rotten Tomatoes, or other popular movie review sites. Please format the review without markdown or HTMl, adding in bullet points for one to three pro or cons dependingon the movie, keeping it balanced."
                         )
                     )
                 )
@@ -49,6 +46,7 @@ class API {
 
         
         $response = json_decode($response, true);
+        $response = $response['candidates'][0]['content']['parts'][0]['text'];
         return $response;
     }
 
