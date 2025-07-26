@@ -12,12 +12,7 @@
     <div class="row">
         <div class="col-lg-12">
             <p>View movies, read reviews, and leave your own review!</p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <h5>Recently reviewed</h5>
-            <!-- TODO: Add recently reviewed movies here -->
+            <button class='btn btn-primary' onclick="window.location.href='/movies'">View Movies</button>
         </div>
     </div>
 </div>
