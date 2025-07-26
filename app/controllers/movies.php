@@ -15,7 +15,7 @@ class Movies extends Controller {
        $movie = $api->search_movie($title);
        $review = $api->get_review($title);
        
-       $this->view('movies/movieinfo', ['movie' => $movie, 'review' => $review]);
+       $this->view('movies/movieinfo', ['movie' => $movie, 'review' => $review ]);
 
        
        echo '<pre>';

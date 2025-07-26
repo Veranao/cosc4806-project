@@ -33,7 +33,7 @@
                     <h5>Movie Info</h5>
                     <div>
                         <h1 class="display-4"> <?php echo $movie['Title']?> </h1>
-                        <h4> Synopsis: <?php echo $movie['Plot']?> </h4>                
+                        <h6><?php echo $movie['Year'] ?> &#8226; <?php echo $movie['Runtime'] ?></h6>           
                     </div>
 
                     <div class="row my-3">
@@ -49,33 +49,31 @@
                         </div>
 
                         <div class="col-lg-9">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                    <th>Year</th>
-                                    <th>Genre(s)</th>
-                                    <th>Director</th>
-                                    <th>Leading Actors</th> 
-                                    <th>IMDB Rating</th>
-                                    <th>Number of Votes on IMDB</th>
-                                    </tr>
-                                </thead> 
-                                
+                            <div><b>Synopsis:</b>&nbsp;<span class="fst-italic"><?php echo $movie['Plot']?></span></div>
+                            <table class="table table-hover my-3" style="border-top: 1px solid #dee2e6; border-bottom: 1px solid #dee2e6;">
                                 <tbody>
-                                    <?php
-                                        echo "<tr>";                
-                                        echo "<td>" . $movie['Year'] . "</td>";
-                                        echo "<td>" . $movie['Genre'] . "</td>";                             
-                                        echo "<td>" . $movie['Director'] . "</td>";
-                                        echo "<td>" . $movie['Actors'] . "</td>";
-                                        echo "<td>" . $movie['imdbRating'] . "</td>";
-                                        echo "<td>" . $movie['imdbVotes'] . "</td>";
-                                        echo "</tr>";?>                       
+                                    <tr>
+                                        <td class="fw-bold">Genre</td>
+                                        <td><?php echo $movie['Genre']?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Director</td>
+                                        <td><?php echo $movie['Director']?></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="fw-bold">Actors</td>
+                                        <td><?php echo $movie['Actors']?></td>
+                                    </tr>
+
+                                    <?php                          
+                                        // echo "<td>" . $movie['imdbRating'] . "</td>";
+                                        // echo "<td>" . $movie['imdbVotes'] . "</td>";
+                                    ?>                       
                                 </tbody>                    
                             </table> 
 
                             <div>
-                                <?php if ($data['review'] == null): ?>
+                                <?php echo $data["review"] ?>
                             </div>
                         </div>
                     </div>

@@ -23,7 +23,7 @@ class API {
                     "role" => "user",
                     "parts" => array(
                         array(
-                            "text" => "Write a review of the movie " . $title . " based on the aggregate reviews for this movie, written as an IMDB, Rotten Tomatoes, or other popular movie review sites. Please format the review without markdown or HTMl, adding in bullet points for one to three pro or cons dependingon the movie, keeping it balanced."
+                            "text" => "Write a review of the movie " . $title . " based on the aggregate reviews for this movie, written as an IMDB, Rotten Tomatoes, or other popular movie review sites, written. Keep it under 150 words. Please format the review without markdown or html in the response prompt. Include one or more positive points and one or more negative points. Don't include movie title at the beginning of the review."
                         )
                     )
                 )
