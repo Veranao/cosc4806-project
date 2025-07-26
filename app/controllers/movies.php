@@ -16,11 +16,6 @@ class Movies extends Controller {
        $review = $api->get_review($title);
        
        $this->view('movies/movieinfo', ['movie' => $movie, 'review' => $review ]);
-
-       
-       echo '<pre>';
-       print_r($review);
-       echo '</pre>';
        die;
      }
    }

@@ -75,16 +75,12 @@
                                     <tr>
                                         <td class="fw-bold">Actors</td>
                                         <td><?php echo $movie['Actors']?></td>
-                                    </tr>
-
-                                    <?php                          
-                                        // echo "<td>" . $movie['imdbRating'] . "</td>";
-                                        // echo "<td>" . $movie['imdbVotes'] . "</td>";
-                                    ?>                       
+                                    </tr>                     
                                 </tbody>                    
                             </table> 
 
                             <div>
+                                <b>Gemini Review:</b>&nbsp;
                                 <?php echo $data["review"] ?>
                             </div>
                         </div>
@@ -93,6 +89,58 @@
             </div>         
         <?php endif; ?> 
     </div>
+
+    <?php if (isset($_SESSION['auth'])): ?>
+        <h4>Leave a review</h4>
+        <style>
+            .star-rating {
+                direction: rtl;
+                display: inline-block;
+                cursor: pointer;
+            }
+    
+            .star-rating input {
+                display: none;
+            }
+    
+            .star-rating label {
+                color: #ddd;
+                font-size: 24px;
+                padding: 0 2px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+    
+            .star-rating label:hover,
+            .star-rating label:hover~label,
+            .star-rating input:checked~label {
+                color: #ffc107;
+            }
+        </style>
+    
+        <div class="star-rating animated-stars">
+            <input type="radio" id="star10" name="rating" value="5">
+            <label for="star10" class="bi bi-star-fill"></label>
+            <input type="radio" id="star9" name="rating" value="5">
+            <label for="star9" class="bi bi-star-fill"></label>
+            <input type="radio" id="star8" name="rating" value="5">
+            <label for="star8" class="bi bi-star-fill"></label>
+            <input type="radio" id="star7" name="rating" value="5">
+            <label for="star7" class="bi bi-star-fill"></label>
+            <input type="radio" id="star6" name="rating" value="5">
+            <label for="star6" class="bi bi-star-fill"></label>
+            <input type="radio" id="star5" name="rating" value="5">
+            <label for="star5" class="bi bi-star-fill"></label>
+            <input type="radio" id="star4" name="rating" value="4">
+            <label for="star4" class="bi bi-star-fill"></label>
+            <input type="radio" id="star3" name="rating" value="3">
+            <label for="star3" class="bi bi-star-fill"></label>
+            <input type="radio" id="star2" name="rating" value="2">
+            <label for="star2" class="bi bi-star-fill"></label>
+            <input type="radio" id="star1" name="rating" value="1">
+            <label for="star1" class="bi bi-star-fill"></label>
+        </div>
+    <?php endif; ?> 
 
    
 </div>
