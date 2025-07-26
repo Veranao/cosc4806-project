@@ -15,7 +15,10 @@ class API {
     }
 
     public function get_review($title) {
-        $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" .     $_ENV['google_key'];
+        $url = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=" . $_ENV['GEMINI'];
+
+        echo $url;
+        echo "<br>";
 
         $data = array(
             "contents" => array(
@@ -28,7 +31,7 @@ class API {
                     )
                 )
             )
-        )
+        );
 
         $json_data = json_encode($data);
         $ch = curl_init($url);

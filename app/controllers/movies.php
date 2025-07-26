@@ -13,8 +13,10 @@ class Movies extends Controller {
        $api = $this->model('API');
        $movie = $api->search_movie($title);
        $this->view('movies/movieinfo', ['movie' => $movie]);
+
+       $review = $api->get_review($title);
        echo '<pre>';
-       print_r($movie);
+       print_r($review);
        echo '</pre>';
        die;
      }
