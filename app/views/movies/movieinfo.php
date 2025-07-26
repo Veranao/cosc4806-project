@@ -3,7 +3,7 @@
 } else {
     require 'app/views/templates/header.php';
 } ?>
-
+<?php $movie = $data['movie'];?>
 <div class="container">
     <div class="page-header" id="banner">
         <div class="row pt-3">
@@ -11,7 +11,8 @@
                 <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/home">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Movies</li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="/movies">Movies</a></li>
+                      <li class="breadcrumb-item active" aria-current="page"><?php echo $movie['Title'] ?></li>
                   </ol>
                 </nav>
             </div>
