@@ -117,13 +117,23 @@
                 color: #ffc107;
             }
         </style>
-    
-        <div class="star-rating animated-stars">
-            <?php for ($i = 1; $i <= 10; $i++): ?>
-                <input type="radio" id="star<?php echo $i; ?>" name="rating" value="<?php echo $i; ?>">
-                <label for="star<?php echo $i; ?>" class="bi bi-star-fill"></label>
-            <?php endfor; ?>
-        </div>
+
+        <form id='ratingForm' action='/movies/review' method='post'>
+            <input type="hidden" name="movieID" value="<?php echo $movie['imdbID']?>">
+            <input type="hidden" name="title" value="<?php echo $movie['Title']?>">
+            <div class="star-rating animated-stars">
+                <?php for ($i = 10; $i >= 1; $i--): ?>
+                    <input type="radio" id="star<?php echo $i; ?>" name="rating" value="<?php echo $i; ?>" onchange="submitForm()">
+                    <label for="star<?php echo $i; ?>" class="bi bi-star-fill"></label>
+                <?php endfor; ?>
+            </div>
+        </form>
+
+        <script>
+            function submitForm() {
+                document.getElementById('ratingForm').submit();
+            }
+        </script>
     <?php endif; ?> 
 
    
