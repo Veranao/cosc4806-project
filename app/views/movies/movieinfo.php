@@ -119,26 +119,10 @@
         </style>
     
         <div class="star-rating animated-stars">
-            <input type="radio" id="star10" name="rating" value="5">
-            <label for="star10" class="bi bi-star-fill"></label>
-            <input type="radio" id="star9" name="rating" value="5">
-            <label for="star9" class="bi bi-star-fill"></label>
-            <input type="radio" id="star8" name="rating" value="5">
-            <label for="star8" class="bi bi-star-fill"></label>
-            <input type="radio" id="star7" name="rating" value="5">
-            <label for="star7" class="bi bi-star-fill"></label>
-            <input type="radio" id="star6" name="rating" value="5">
-            <label for="star6" class="bi bi-star-fill"></label>
-            <input type="radio" id="star5" name="rating" value="5">
-            <label for="star5" class="bi bi-star-fill"></label>
-            <input type="radio" id="star4" name="rating" value="4">
-            <label for="star4" class="bi bi-star-fill"></label>
-            <input type="radio" id="star3" name="rating" value="3">
-            <label for="star3" class="bi bi-star-fill"></label>
-            <input type="radio" id="star2" name="rating" value="2">
-            <label for="star2" class="bi bi-star-fill"></label>
-            <input type="radio" id="star1" name="rating" value="1">
-            <label for="star1" class="bi bi-star-fill"></label>
+            <?php for ($i = 1; $i <= 10; $i++): ?>
+                <input type="radio" id="star<?php echo $i; ?>" name="rating" value="<?php echo $i; ?>">
+                <label for="star<?php echo $i; ?>" class="bi bi-star-fill"></label>
+            <?php endfor; ?>
         </div>
     <?php endif; ?> 
 
