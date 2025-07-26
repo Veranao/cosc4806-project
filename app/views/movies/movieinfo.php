@@ -31,9 +31,21 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h5>Movie Info</h5>
-                    <div>
-                        <h1 class="display-4"> <?php echo $movie['Title']?> </h1>
-                        <h6><?php echo $movie['Year'] ?> &#8226; <?php echo $movie['Runtime'] ?></h6>           
+                    <div class="d-flex">
+                        <div>
+                            <h1 class="display-4"> <?php echo $movie['Title']?> </h1>
+                            <h6><?php echo $movie['Year'] ?> &#8226; <?php echo $movie['Runtime'] ?></h6>      
+                        </div>
+                        <div class="ms-auto">
+                            <div class="fw-bold">IMDb Rating</div>
+                            <div class="d-flex">
+                                <h2><i class="bi bi-star-fill" style="color: gold;"></i></h2>
+                                <div class="ms-2">
+                                    <div class="fw-bold"><?php echo $movie['imdbRating']?> / 10</div>
+                                    <div style="font-size: small"><?php echo $movie['imdbVotes']?></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="row my-3">
