@@ -138,7 +138,7 @@
                     document.getElementById('reviewMessage').style.display = "block";
                     setTimeout(() => {
                          document.getElementById('ratingForm').submit();
-                    }, 250);
+                    }, 1000);
                 }, 500);
                
             }
